@@ -3,10 +3,10 @@ set mouse+=a
 set number
 set enc=utf-8
 
-source ~/vimfiles/bundles.vim
+source ~/.vim/bundles.vim
 
 colorscheme dante2
-source ~/vimfiles/idx.vim
+source ~/.vim/idx.vim
 " set commands {{{
 "set fo-=t fo-=o fo-=r " don't continue comments after singline line comments or when using oO, also don't wrap text
 set cmdheight=2 " Number of screen lines to use for the ocmmand-line
