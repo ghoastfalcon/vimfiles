@@ -5,8 +5,6 @@ set enc=utf-8
 
 source ~/vimfiles/bundles.vim
 
-
-
 colorscheme dante2
 source ~/vimfiles/idx.vim
 " set commands {{{
@@ -51,6 +49,20 @@ if has("persistent_undo")
 	set undofile
 	set undodir=$HOME/.vim/undodir/
 endif
+
+" PHP linter settings for phpqa
+let g:phpqa_codesniffer_autorun = 0
+let g:phpqa_messdetector_autorun = 0
+
+" to set NERDTree to open on every screen or tab
+autocmd VimEnter * NERDTreeTabsOpen
+autocmd BufEnter * NERDTreeMirror
+
+nnoremap <leader>kb :NERDTreeTabsToggle<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " }}}
 

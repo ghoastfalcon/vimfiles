@@ -28,6 +28,17 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " lean & mean status/tabline for vim that's light as air
 NeoBundle 'bling/vim-airline'
 
+" PHP Linter
+NeoBundle 'joonty/vim-phpqa'
+
+" file explorer that is awesome
+NeoBundle 'scrooloose/nerdtree'
+" allowing for tabs
+NeoBundle 'jistr/vim-nerdtree-tabs'
+
+" Git wrapper for vim
+NeoBundle 'tpope/vim-fugitive'
+
 " Vim plugin to dim inactive windows 
 NeoBundle 'blueyed/vim-diminactive'
 " BufExplorer Plugin for Vim
