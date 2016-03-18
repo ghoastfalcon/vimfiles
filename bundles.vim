@@ -6,9 +6,9 @@ if has('vim_starting')
 endif
 
 " Required:
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-call neobundle#rc()
+call neobundle#end()
 
 " Github: Use the path ('user/repository')
 " vim.org: Use last portion of URL ('matchit.zip')
@@ -28,6 +28,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " lean & mean status/tabline for vim that's light as air
 NeoBundle 'bling/vim-airline'
 
+" colorscheme of molokai
+NeoBundle 'sickill/vim-monokai'
+
 " PHP Linter
 NeoBundle 'joonty/vim-phpqa'
 
@@ -38,6 +41,9 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 
 " Git wrapper for vim
 NeoBundle 'tpope/vim-fugitive'
+
+" Snippets yay!
+NeoBundle 'SirVer/ultisnips'
 
 " Vim plugin to dim inactive windows 
 NeoBundle 'blueyed/vim-diminactive'
@@ -95,6 +101,11 @@ NeoBundle 'xsbeats/vim-blade'
 NeoBundle 'scrooloose/syntastic'
 " Markdown runtime files
 NeoBundle 'tpope/vim-markdown'
+
+NeoBundle 'Shougo/vimproc', {'build' : {'unix' : 'make -f make_unix.mak'}}
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'm2mdas/phpcomplete-extended'
+
 
 filetype plugin indent on     " required
 

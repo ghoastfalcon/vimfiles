@@ -5,7 +5,7 @@ set enc=utf-8
 
 source ~/.vim/bundles.vim
 
-colorscheme dante2
+colorscheme monokai
 source ~/.vim/idx.vim
 " set commands {{{
 "set fo-=t fo-=o fo-=r " don't continue comments after singline line comments or when using oO, also don't wrap text
@@ -40,14 +40,18 @@ set laststatus=2
 set spelllang=en_us " Define the region for spell checking
 set spellfile=~/.vim/spell/en.utf-8.add
 set sps+=10 " Limit the number of suggestions shown to 10.
+set tabstop=4 
+set shiftwidth=4 
+set expandtab "expand tab.
 
 " Options that require version 7.4 or higher.
 if v:version > 740
 	set fo+=j " Where it makes sense, remove a comment leader when joining lines.
 endif
-if has("persistent_undo")
-	set undofile
-	set undodir=$HOME/.vim/undodir/
+
+if (has("persistent_undo"))
+set undofile
+  let &undodir='~/.vim/undodir/'
 endif
 
 " PHP linter settings for phpqa
@@ -57,6 +61,9 @@ let g:phpqa_messdetector_autorun = 0
 " to set NERDTree to open on every screen or tab
 autocmd VimEnter * NERDTreeTabsOpen
 autocmd BufEnter * NERDTreeMirror
+
+" omni complete
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 nnoremap <leader>kb :NERDTreeTabsToggle<CR>
 nnoremap <C-J> <C-W><C-J>
@@ -98,6 +105,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#close_symbol = ''
 let g:airline#extensions#whitespace#checks = [ 'indent' ]
 
+" Ultisnip {{{
+let g:UltiSnipsEditSplit = 'vertical'
+"  }}}
 " phpcomplete options
 let g:phpcomplete_index_composer_command = 'composer'
 
@@ -134,14 +144,14 @@ let g:indentLine_noConcealCursor = 1
 " Swap parameters options
 let g:SwapParametersMapForwards = '<leader>s'
 let g:SwapParametersMapBackwards = '<leader>S'
-
+	
 " }}}
 
 " mappings {{{
 " note, it is only possible to map a limit number of characters to C-
 " they are:
 " a through z, [, \, ], ^, _, and @.  That's it
-map g= :%s/\n\s*{/ {/e<cr>gg=Ggg
+map g= gg=G``
 nmap du :diffu<cr>
 nmap Y y$
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<c-r>=current_reg<cr><esc>:let @" = current_reg<cr>
