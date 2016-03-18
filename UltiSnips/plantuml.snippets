@@ -1,0 +1,213 @@
+snippet uml "start/stop"
+@startuml
+
+$1
+
+@enduml
+endsnippet
+
+snippet hide "hide empty things"
+hide empty fields
+hide empty methods
+endsnippet
+
+snippet ns "namespace"
+namespace ${1:namespace} {
+	$2
+}
+endsnippet
+
+snippet int "interface" b
+interface ${1:SomeInterface} ${2:{
+$3
+}}$0
+endsnippet
+
+snippet abs "abstract" b
+abstract ${1:SomeAbstract} ${2:{
+$3
+}}$0
+endsnippet
+
+snippet cla "class" b
+class ${1:SomeClass} ${2:{
+$3
+}}$0
+endsnippet
+
+snippet com "command" b
+class ${1:SomeCommand} <<(D, MediumSeaGreen) Command >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet COM "command (!defined)" b
+class ${1:SomeCommand} << COMMAND >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet con "controller" b
+class ${1:SomeController} <<(N, OliveDrab) Controller >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet CON "controller (!defined)" b
+class ${1:SomeController} << CONTROLLER >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet mod "model" b
+class ${1:SomeModel} <<(M, LightSeaGreen) Model >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet MOD "model (!defined)" b
+class ${1:SomeModel} << MODEL >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet rep "repository" b
+class ${1:SomeRepository} <<(R, RoyalBlue) Repository >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet REP "repository (!defined)" b
+class ${1:SomeRepository} << REPOSITORY >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet ser "service provider" b
+class ${1:SomeServiceProvider} <<(P, Orchid) ServiceProvider >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet SER "service provider (!defined)" b
+class ${1:SomeServiceProvider} << SERVICEPROVIDER >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet sin "singleton" b
+class ${1:SomeSingleton} <<(S, Salmon) Singleton >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet SIN "singleton (!defined)" b
+class ${1:SomeSingleton} << SINGLETON >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet tra "trait" b
+class ${1:SomeTrait} <<(T, Lavender) Trait >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet TRA "trait (!defined)" b
+class ${1:SomeTrait} << TRAIT >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet vie "view" b
+class ${1:SomeView} <<(V, Coral) View >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet VIE "view (!defined)" b
+class ${1:SomeView} << VIEW >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet exc "exception" b
+class ${1:SomeException} <<(E, DarkOrange) Exception >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet EXC "exception (!defined)"
+class ${1:SomeException} << EXCEPTION >> ${2:{
+$3
+}}$0
+endsnippet
+
+snippet imp "implements ..|>"
+.$2.|> ${1:ImplementedInterface} : <implements>$0
+endsnippet
+
+snippet ext "extends --|>"
+-$2-|> ${1:ExtendedClass} : <extends>$0
+endsnippet
+
+snippet use "uses -->"
+-$2-> ${1:UsedTraits} : <uses>$0
+endsnippet
+
+snippet thr "throws --*"
+-$2-* ${1:ThrownException} : <throws>$0
+endsnippet
+
+snippet dep "depends ..>"
+.$2.> ${1:DependedClass} : "depends"$0
+endsnippet
+
+snippet has "has ..*"
+.$2.* ${1:HasClass} : "has"$0
+endsnippet
+
+snippet ins "instantiates ..o"
+.$2.o ${1:InstantiatedClass} : "instantiates"$0
+endsnippet
+
+snippet define
+!define COMMAND (D, MediumSeaGreen) Command
+!define CONTROLLER (N, OliveDrab) Controller
+!define MODEL (M, LightSeaGreen) Model
+!define REPOSITORY (R, RoyalBlue) Repository
+!define SERVICEPROVIDER (P, Orchid) ServiceProvider
+!define SINGLETON (S, Salmon) Singleton
+!define TRAIT (T, Lavender) Trait
+!define VIEW (V, Coral) View
+!define EXCEPTION (E, DarkOrange) Exception
+endsnippet
+
+snippet defcom "define command"
+!define COMMAND (D, MediumSeaGreen) Command
+endsnippet
+snippet defcon "define controller"
+!define CONTROLLER (N, OliveDrab) Controller
+endsnippet
+snippet defmod "define model"
+!define MODEL (M, LightSeaGreen) Model
+endsnippet
+snippet defrep "define repository"
+!define REPOSITORY (R, RoyalBlue) Repository
+endsnippet
+snippet defser "define service provider"
+!define SERVICEPROVIDER (P, Orchid) ServiceProvider
+endsnippet
+snippet defsin "define singleton"
+!define SINGLETON (S, Salmon) Singleton
+endsnippet
+snippet deftra "define trait"
+!define TRAIT (T, Lavender) Trait
+endsnippet
+snippet defvie "define view"
+!define VIEW (V, Coral) View
+endsnippet
+snippet defexc "define exception"
+!define EXCEPTION (E, DarkOrange) Exception
+endsnippet
+

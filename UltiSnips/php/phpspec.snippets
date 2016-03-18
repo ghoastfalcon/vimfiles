@@ -1,0 +1,43 @@
+# Snippets for PHPSpec testing
+
+snippet argt "Argument::type()" w
+Argument::type(${1:'string'})$0
+endsnippet
+
+snippet argc "Argument::cetera()" w
+Argument::cetera()$0
+endsnippet
+
+snippet arga "Argument::any()" w
+Argument::any()$0
+endsnippet
+
+snippet let "let()"
+function let($1)`!p
+if t[1].find("\n") > -1:
+	snip.rv = " {"
+else:
+	snip += "{"
+`
+	$this->beConstructedWith(${2:${1/.*?(\$\w+,? ?)\s*/(?1:$1)/g}});
+}`!p snip.rv = "\n"`$0
+endsnippet
+
+snippet it "it should..."
+function it_should_$1($2)${3:
+}{
+    $0
+}
+endsnippet
+
+snippet call "->shouldBeCalled()" w
+->shouldBeCalled();$0
+endsnippet
+
+snippet be "->shouldBe...()" w
+->shouldBe$1($2)$0
+endsnippet
+
+snippet will "->willReturn(...)" w
+->willReturn($1)$0
+endsnippet

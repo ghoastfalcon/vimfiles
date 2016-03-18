@@ -1,0 +1,26 @@
+# Snippets for use with Larvel
+snippet sp "Service Provider"
+use Illuminate\Support\ServiceProvider;
+
+/**
+ * ${1:Service Provider}
+ *
+ * @author ${2:`! git config --get user.name` <`! git config --get user.email`>}
+ */
+class ${3:`!v expand("%:t:r")`} extends ServiceProvider
+{
+    public function register()
+    {
+        $0
+    }
+}
+endsnippet
+
+snippet appmake "Application::make()"
+$this->app->make($1);$0
+endsnippet
+
+snippet confget "Config::get()"
+$${1:app['config']}->get($2);$0
+endsnippet
+

@@ -1,0 +1,275 @@
+## Snippets from SnipMate, taken from
+## https://github.com/scrooloose/snipmate-snippets.git
+## Modified by myself
+
+global !p
+import subprocess
+def authorString():
+	return subprocess.check_output(["git", "config", "--get", "user.name"]).rstrip() + " <" + subprocess.check_output(["git", "config", "--get", "user.email"]).rstrip() + ">"
+endglobal
+
+snippet php "php"
+<?php$0
+endsnippet
+
+snippet array "array"
+$${1:arrayName} = array($2);$3
+endsnippet
+
+snippet do "do"
+do {
+    ${2:// code... }
+} while (${1:/* condition */});"
+endsnippet
+
+snippet func "func"
+/**
+ * $2
+ * @return ${4:void}
+ **/
+${1:public }function ${2:someFunc}(${3})
+{${6}
+}
+endsnippet
+
+snippet interface "interface"
+/**
+ * $1
+ *
+ * @author `!p snip.rv = authorString()`
+ **/
+interface ${1:`!v expand("%:t:r")`}${2: extends }$3
+{$6
+}
+endsnippet
+
+snippet abstract "abstract"
+/**
+ * $1
+ *
+ * @author `!p snip.rv = authorString()`
+ **/
+abstract class ${1:`!v expand("%:t:r")`}${2: extends }$3${4: implements }$5
+{$6
+}
+endsnippet
+
+snippet class "Class declaration template" b
+/**
+ * Class $1
+ *
+ * @author `!p snip.rv = authorString()`
+ */
+class ${1:`!v expand("%:t:r")`}${2: extends }$3${4: implements }$5
+{
+    public function ${6:__construct}(${7:$options})
+    {
+        ${8:// code}
+    }
+}
+endsnippet
+
+snippet construct "__construct()" b
+/**
+ * @param $2mixed ${1/, /\n     * \@param mixed /g}
+ */
+public function __construct(${1:$dependencies})
+{
+    ${1/\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
+}
+endsnippet
+
+snippet else "else"
+else {
+    ${1:// code...}
+}
+endsnippet
+
+snippet for "for"
+for ($${1:i} = ${2:0}; $$1 < ${3:count}; $$1${4:++}) {
+    ${5:// code...}
+}
+endsnippet
+
+snippet forek "Foreach w/ key"
+foreach ($${1:variable} as $${2:key} => $${3:value}){
+    ${4:// code...}
+}
+endsnippet
+
+snippet if "if"
+if (${1:/* condition */}) {
+    ${2:// code...}
+}
+endsnippet
+
+snippet ternary "ternary"
+$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+endsnippet
+
+snippet getter "PHP Class Getter" b
+/**
+ * Getter for $1
+ */
+public function get${1/\w+\s*/\u$0/}()
+{
+    return $this->$1;$2
+}
+endsnippet
+
+snippet setter "PHP Class Setter" b
+/**
+ * Setter for $1
+ */
+public function set${1/\w+\s*/\u$0/}($$1)
+{
+    $this->$1 = $$1;$3
+    ${4:return $this;}
+}
+endsnippet
+
+snippet gs "PHP Class Getter Setter" b
+/**
+ * Getter for $1
+ */
+public function get${1/\w+\s*/\u$0/}()
+{
+    return $this->$1;$2
+}
+
+/**
+ * Setter for $1
+ */
+public function set${1/\w+\s*/\u$0/}($$1)
+{
+    $this->$1 = $$1;$3
+    ${4:return $this;}
+}
+endsnippet
+
+snippet ipub "Public interface function" b
+public function ${1:name}(${2:$param});$0
+endsnippet
+
+snippet ipro "Protected interface function" b
+protected function ${1:name}(${2:$param});$0
+endsnippet
+
+snippet ipri "Private interface function" b
+private function ${1:name}(${2:$param});$0
+endsnippet
+
+snippet ipubs "Public static interface function" b
+public static function ${1:name}(${2:$param});$0
+endsnippet
+
+snippet ipros "Protected static interface function" b
+protected static function ${1:name}(${2:$param});$0
+endsnippet
+
+snippet ipris "Private static interface function" b
+private static function ${1:name}(${2:$param});$0
+endsnippet
+
+snippet pub "Public function" b
+public function ${1:name}(${2:$param})
+{
+    ${VISUAL}$3
+}
+endsnippet
+
+snippet pro "Protected function" b
+protected function ${1:name}(${2:$param})
+{
+    ${VISUAL}$3
+}
+endsnippet
+
+snippet pri "Private function" b
+private function ${1:name}(${2:$param})
+{
+    ${VISUAL}$3
+}
+endsnippet
+
+snippet pubs "Public static function" b
+public static function ${1:name}(${2:$param})
+{
+    ${VISUAL}$3
+}
+endsnippet
+
+snippet pros "Protected static function" b
+protected static function ${1:name}(${2:$param})
+{
+    ${VISUAL}$3
+}
+endsnippet
+
+snippet pris "Private static function" b
+private static function ${1:name}(${2:$param})
+{
+    ${VISUAL}$3
+}
+endsnippet
+
+snippet fore "Foreach loop"
+foreach ($${1:variable} as $${3:value}){
+    ${VISUAL}${4}
+}
+endsnippet
+
+snippet new "New class instance" b
+$$1 = new $1($2);
+endsnippet
+
+snippet ife "if else"
+if (${1:/* condition */}) {
+    ${2:// code...}
+} else {
+    ${3:// code...}
+}
+endsnippet
+
+snippet pr "print_r()"
+print_r($1${2:, true});$0
+endsnippet
+
+snippet vd "var_dump"
+var_dump($1);$0
+endsnippet
+
+snippet ns "namespace based on path"
+namespace `!v substitute(substitute(expand("%:h"), '\v^(app|src)/', '', ''), '/', '\', 'g')`;
+endsnippet
+
+snippet doc "DocBlock"
+/**
+ * ${1:Summary}
+ *$2
+ * @return ${3:void}
+ */$0
+endsnippet
+
+snippet idoc "@inherit DockBlock"
+/**
+ * {@inheritDoc}
+ */
+endsnippet
+
+snippet ' \* @p' "DocBlock @param" br
+`!p snip.rv = snip.mkline(" * ")`@param ${1:type} $${2:var} ${3:desc}$0
+endsnippet
+
+snippet ' \* @r' "DocBlock return" br
+`!p snip.rv = snip.mkline(" * ")`@return ${1:void}$0
+endsnippet
+
+snippet ' \* @a' "DocBlock author" br
+`!p snip.rv = snip.mkline(" * ")`@author `!p snip.rv = authorString()`
+endsnippet
+
+snippet '\* @t' "DockBlock @type" r
+* @type ${1:type} $${2:var} ${3:desc}
+endsnippet
+

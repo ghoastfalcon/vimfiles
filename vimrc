@@ -2,6 +2,7 @@ set t_Co=256 " Sets terminal to use 256 colors for CSApprox
 set mouse+=a
 set number
 set enc=utf-8
+set hlsearch " to highling all instances of the searched string
 
 source ~/.vim/bundles.vim
 
@@ -70,6 +71,19 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-U> 50k
+nnoremap <C-D> 50j
+nnoremap <2-LeftMouse> *
+
+" Handle bufferes - Next, Previous, Close
+nnoremap gt :bn<CR>
+nnoremap gT :bp<CR>
+nnoremap <C-X> :bw<CR>
+
+
+command! H let @/=""
+
+nnoremap <F5> :source ~/.vim/vimrc<CR>
 
 " }}}
 
@@ -144,7 +158,6 @@ let g:indentLine_noConcealCursor = 1
 " Swap parameters options
 let g:SwapParametersMapForwards = '<leader>s'
 let g:SwapParametersMapBackwards = '<leader>S'
-	
 " }}}
 
 " mappings {{{
@@ -163,6 +176,7 @@ nnoremap <space> za
 " Folded lines should not have a background.  Period.
 highlight Folded ctermbg=0 ctermfg=7
 
+hi SpecialKey ctermbg=NONE guibg=NONE
 hi MatchParen ctermbg=242
 hi ColorColumn ctermbg=235
 hi TabLine cterm=NONE ctermbg=240

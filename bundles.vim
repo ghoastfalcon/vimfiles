@@ -47,6 +47,24 @@ NeoBundle 'SirVer/ultisnips'
 
 " Vim plugin to dim inactive windows 
 NeoBundle 'blueyed/vim-diminactive'
+
+" snipmate plugin for vim
+NeoBundle 'garbas/vim-snipmate'
+
+" snippets yay
+NeoBundle 'honza/vim-snippets'
+
+" vim-addon-mw-utils
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+
+" tlib_vum
+NeoBundle 'tomtom/tlib_vim'
+
+" Unite a fuzzy search tool for Ctrl-P
+NeoBundle 'Shougo/unite.vim'
+
+" Vim plugin to dim inactive windows 
+" NeoBundle 'blueyed/vim-diminactive'
 " BufExplorer Plugin for Vim
 NeoBundle 'jlanzarotta/bufexplorer'
 " provides insert mode auto-completion for quotes, parens, brackets, etc.
@@ -88,6 +106,19 @@ NeoBundle 'justinmk/vim-sneak'
 " Vim plugin that allows you to visually select increasingly larger regions of text using the same key combination.
 NeoBundle 'terryma/vim-expand-region'
 
+" Interactive command execution in Vim.
+NeoBundle 'Shougo/vimproc', {
+		\ 'build' : {
+			\ 'windows' : 'make -f make_mingw32.mak',
+			\ 'cygwin' : 'make -f make_cygwin.mak',
+			\ 'mac' : 'make -f make_mac.mak',
+			\ 'unix' : 'make -f make_unix.mak',
+		\ },
+	\ }
+
+" A fast, extensible, context aware autocomplete plugin for PHP composer projects with code inspection features.
+NeoBundle 'm2mdas/phpcomplete-extended'
+
 """ Indenting
 " PHP Indenting
 NeoBundle '2072/PHP-Indenting-for-VIm'
@@ -102,7 +133,6 @@ NeoBundle 'scrooloose/syntastic'
 " Markdown runtime files
 NeoBundle 'tpope/vim-markdown'
 
-NeoBundle 'Shougo/vimproc', {'build' : {'unix' : 'make -f make_unix.mak'}}
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'm2mdas/phpcomplete-extended'
 
